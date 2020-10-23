@@ -1,0 +1,110 @@
+        <!-- Header Section Start From Here -->
+        <header class="header-wrapper">
+          <!-- Header Nav Start -->
+          <div class="header-nav">
+            <div class="container">
+              <div class="header-nav-wrapper d-md-flex d-sm-flex d-xl-flex d-lg-flex justify-content-between">
+                <div class="header-static-nav">
+                  <p>Chào mừng đến với cửa hàng của chúng tôi!</p>
+                </div>
+                <div class="header-menu-nav">
+                  <ul class="menu-nav">
+                    <li>
+                      <div class="dropdown">
+                        <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">Cài đặt <i class="ion-ios-arrow-down"></i></button>
+
+                        <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton">
+                          <li><a>Tài khoản của bạn</a></li>
+                          <li><a routerLink="/customer/checkout">Thanh toán</a></li>
+                          <li><a routerLink="/customer/login">Đăng nhập</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown">
+                        <button type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">VNĐ<i class="ion-ios-arrow-down"></i></button>
+
+                        <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton-2">
+                          <li><a href="#">VNĐ</a></li>
+                          <li><a href="#">USD $</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="pr-0">
+                      <div class="dropdown">
+                        <button type="button" id="dropdownMenuButton-3" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          <img src="assets/images/flag/1.jpg" alt="" /> Tiếng Việt <i class="ion-ios-arrow-down"></i>
+                        </button>
+
+                        <ul class="dropdown-menu animation slideDownIn" aria-labelledby="dropdownMenuButton-3">
+                          <li>
+                            <a href="#"><img src="assets/images/flag/1.jpg" alt="" /> English</a>
+                          </li>
+                          <li>
+                            <a href="#"><img src="assets/images/flag/2.jpg" alt="" /> Tiếng Việt</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Header Nav End -->
+          <div class="header-top bg-white ptb-30px d-xl-block d-none">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="logo">
+                    <a href="index.html"><img class="img-responsive" src="assets/images/logo/logo.jpg"
+                        alt="logo.jpg" /></a>
+                  </div>
+                </div>
+                <div class="col-md-10 align-self-center">
+                  <div class="header-right-element d-flex">
+                    <div class="search-element media-body">
+                      <form class="d-flex" action="#">
+                        <div class="search-category">
+                          <select>
+                            <option value="0">Danh mục</option>
+                            <ng-container *ngFor="let i of categories">
+                            <option><a [routerLink]="['/product/list-item', i.category_id]">{{ i.name }}</a></option>
+                            </ng-container>
+
+                          </select>
+                        </div>
+                        <input type="text" placeholder="Hãy nhập thông tin... " />
+                        <button routerLink="/search"><i class="icon-magnifier"></i></button>
+                      </form>
+                    </div>
+                    <div class="contact-link">
+                      <div class="phone">
+                        <p>Gọi cho chúng tôi:</p>
+                        <a href="tel:(+800)345678">039.283.8832</a>
+                      </div>
+                    </div>
+                    <!--Cart info Start -->
+                    <div class="header-tools d-flex">
+                      <div class="cart-info d-flex align-self-center">
+                        <a href="compare.html" class="shuffle" data-number="3"><i class="icon-shuffle"></i></a>
+                        <a href="#offcanvas-wishlist" class="heart offcanvas-toggle" data-number="3"><i
+                            class="icon-heart"></i></a>
+                        <a routerLink="/customer/cart" class="bag offcanvas-toggle" id="total" data-number="0"><i
+                            class="icon-bag"></i><span></span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Cart info End -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Header Nav End -->
+          <app-category></app-category>
+          <!-- header menu -->
+        </header>
+        <!-- Header Section End Here -->

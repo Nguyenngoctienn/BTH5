@@ -1,0 +1,166 @@
+    <div class="offcanvas-overlay"></div>
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="breadcrumb-content">
+              <ul class="nav">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li>Đặt hàng</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb Area End-->
+    <!-- checkout area start -->
+    <div class="checkout-area mt-60px mb-40px">
+      <div class="container">
+        <form [formGroup]="hoadonForm" (ngSubmit)="onSubmit(hoadonForm.value)">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="billing-info-wrap">
+
+                <h3>Chi tiết hóa đơn</h3>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                    <div class="billing-info mb-20px">
+                      <label>Nhập họ và tên</label>
+                      <input formControlName="name" type="text" value="Nguyễn Minh Quang" />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <div class="billing-info mb-20px">
+                      <label>Số điện thoại</label>
+                      <input formControlName="phone" value="0394682286" type="text" />
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="billing-info mb-20px">
+
+                     <label>Địa chỉ</label>
+                      <input formControlName="address" value="Nguyên Hòa - Phù Cừ - Hưng Yên" type="text" />
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="additional-info-wrap">
+                  <h4>Thêm thông tin</h4>
+                  <div class="additional-info">
+                    <label>Ghi chú đơn hàng</label>
+                    <textarea placeholder="Ghi chú cho đơn hàng của bạn."
+                     ></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="col-lg-6 mt-md-30px mt-lm-30px ">
+              <div class="your-order-area">
+                <h3>Đơn hàng của bạn</h3>
+                <div class="your-order-wrap gray-bg-5">
+                  <div class="your-order-product-info">
+                    <div class="your-order-top">
+                      <ul>
+                        <li>Sản phẩm</li>
+
+                        <li>Số tiền</li>
+                      </ul>
+                    </div>
+                    <div class="your-order-middle">
+                      <ul>
+                        <!-- <ng-container *ngFor="let it of items"> -->
+                        <li *ngFor="let it of items">
+                          <span class="order-middle-left">{{ it.name }} X {{ it.quantity_sale }}
+                          </span>
+
+                          <span class="order-price">{{ it.money | number }} VNĐ </span>
+                        </li>
+
+                        <!-- </ng-container> -->
+                      </ul>
+                    </div>
+                    <div class="your-order-bottom">
+                      <ul>
+                        <li class="your-order-shipping">Vận chuyển</li>
+                        <li>Giao hàng miễn phí</li>
+                      </ul>
+                    </div>
+                    <div class="your-order-total">
+                      <ul>
+                        <li class="order-total">Tổng tiền</li>
+                        <li>{{ total | number }} VNĐ</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- <div class="payment-method">
+                    <div class="payment-accordion element-mrg">
+                      <div class="panel-group" id="accordion">
+                        <div class="panel payment-accordion">
+                          <div class="panel-heading" id="method-one">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#method1">
+                                Direct bank transfer
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="method1" class="panel-collapse collapse show">
+                            <div class="panel-body">
+                              <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
+                                Store
+                                Postcode.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel payment-accordion">
+                          <div class="panel-heading" id="method-two">
+                            <h4 class="panel-title">
+                              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method2">
+                                Check payments
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="method2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
+                                Store
+                                Postcode.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel payment-accordion">
+                          <div class="panel-heading" id="method-three">
+                            <h4 class="panel-title">
+                              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method3">
+                                Cash on delivery
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="method3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
+                                Store
+                                Postcode.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="Place-order mt-25">
+                  <button type="submit" class="btn btn-primary">Xác nhận đơn hàng</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- checkout area end -->

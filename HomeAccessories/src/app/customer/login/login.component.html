@@ -1,0 +1,89 @@
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="breadcrumb-content">
+              <ul class="nav">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li>Đăng nhập / Đăng ký</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb Area End-->
+    <!-- login area start -->
+    <div class="login-register-area mtb-60px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+            <div class="login-register-wrapper">
+              <div class="login-register-tab-list nav">
+                <a class="active" data-toggle="tab" href="#lg1">
+                  <h4>Đăng nhập</h4>
+                </a>
+                <a data-toggle="tab" href="#lg2">
+                  <h4>Đăng ký</h4>
+                </a>
+              </div>
+              <div class="tab-content">
+                <div id="lg1" class="tab-pane active">
+                  <div class="login-form-container">
+                    <div class="login-register-form">
+
+                      <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
+                        <input type="text" name="email" formControlName="email" placeholder="Email" />
+                        <span class="text text-danger"
+                          *ngIf="(loginForm.get('email').invalid) && loginForm.get('email').touched">Email
+                          không đúng định dạng hoặc đã để trống! </span> <br>
+
+                        <input type="password" formControlName="password" name="password" placeholder="Password" />
+                        <span class="text text-danger" *ngIf="(loginForm.get('password').invalid) &&
+                          loginForm.get('password').touched">
+                          Mật khẩu không được trống và phải lớn hơn 6 kí tự! </span>
+                        <div class="button-box">
+                          <div class="login-toggle-btn">
+                            <input type="checkbox" />
+                            <a class="flote-none" id="remember">Nhớ đăng nhập</a>
+                            <a href="#">Quên mật khẩu?</a>
+                          </div>
+                          <button type="submit"><span>Đăng nhập</span></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div id="lg2" class="tab-pane">
+                  <div class="login-form-container">
+                    <!-- [formGroup]="registerForm" -->
+                    <div class="login-register-form">
+                      <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister(registerForm.value)">
+                        <input name="email" formControlName="email" placeholder="Email" type="email" />
+                        <label class="col alert alert-danger" role="alert"
+                          *ngIf="(registerForm.controls.email?.errors?.required
+                               || registerForm.controls.email?.errors?.email) && registerForm.controls.email?.touched ">
+                          Email là rỗng hoặc không đúng định dạng!
+                        </label>
+
+                        <input formControlName="password" type="password" name="password" placeholder="Password" />
+                        <label class="col alert alert-danger" role="alert"
+                          *ngIf="(registerForm.controls.password?.errors?.required
+                           || registerForm.controls.password?.errors?.password) && registerForm.controls.password?.touched">
+                          Mật khẩu không được rỗng!
+                        </label>
+                        <div class="button-box">
+                          <button type="submit"><span>Đăng ký</span></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- login area end -->

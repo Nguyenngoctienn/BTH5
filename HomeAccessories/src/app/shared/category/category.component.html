@@ -1,0 +1,123 @@
+<div class="header-menu bg-blue sticky-nav d-xl-block d-none padding-0px">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 custom-col-2">
+        <div class="header-menu-vertical">
+          <h4 class="menu-title">Danh mục</h4>
+          <ul class="menu-content display-none">
+            <ng-container *ngFor="let i of categories">
+              <li *ngIf="i.children != null" class="menu-item">
+                <a [routerLink]="['/product/list-item', i.category_id]">{{ i.name }} <i
+                    class="ion-ios-arrow-right"></i></a>
+                <ul class="sub-menu sub-menu-2">
+                  <li>
+                    <ul class="submenu-item">
+                      <ng-container *ngFor="let c of i.children">
+                        <li><a [routerLink]="['/product/list-item', c.category_id]">{{ c.name }}</a></li>
+                      </ng-container>
+
+                    </ul>
+                  </li>
+                </ul>
+                <!-- sub menu -->
+              </li>
+              <li class="menu-item" *ngIf="i.children == null"><a
+                  [routerLink]="['/product/list-item', i.category_id]">{{ i.name }}</a></li>
+            </ng-container>
+
+
+          </ul>
+          <!-- menu content -->
+        </div>
+        <!-- header menu vertical -->
+      </div>
+      <div class="col-lg-9 custom-col-2">
+        <div class="header-horizontal-menu">
+          <ul class="menu-content">
+            <li class="active menu-dropdown">
+              <a routerLink="/">Trang chủ <i class="ion-ios-arrow-down"></i></a>
+
+            </li>
+            <li class="menu-dropdown">
+              <a routerLink="/">Cửa hàng<i class="ion-ios-arrow-down"></i></a>
+              <ul class="mega-menu-wrap">
+                <li>
+                  <ul>
+                    <li class="mega-menu-title"><a href="#"></a></li>
+                    <li><a href="shop-3-column.html">Shop Grid 3 Column</a></li>
+                    <li><a href="shop-4-column.html">Shop Grid 4 Column</a></li>
+                    <li><a href="shop-left-sidebar.html">Shop Grid Left Sidebar</a></li>
+                    <li><a href="shop-right-sidebar.html">Shop Grid Right Sidebar</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li class="mega-menu-title"><a href="#">Giới thiệu</a></li>
+                    <li><a href="shop-list.html">Shop List</a></li>
+                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
+                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li class="mega-menu-title"><a href="#">Liên hệ</a></li>
+                    <li><a href="single-product.html">Shop Single</a></li>
+                    <li><a href="single-product-variable.html">Shop Variable</a></li>
+                    <li><a href="single-product-affiliate.html">Shop Affiliate</a></li>
+                    <li><a href="single-product-group.html">Shop Group</a></li>
+                    <li><a href="single-product-tabstyle-2.html">Shop Tab 2</a></li>
+                    <li><a href="single-product-tabstyle-3.html">Shop Tab 3</a></li>
+                  </ul>
+                </li>
+                <li>
+
+                </li>
+                <li class="w-100">
+                  <ul class="banner-megamenu-wrapper d-flex">
+                    <li class="banner-wrapper mr-30px">
+                      <a href="single-product.html"><img src="assets/images/menu-image/banner-menu2.jpg" alt="" /></a>
+                    </li>
+                    <li class="banner-wrapper">
+                      <a href="single-product.html"><img src="assets/images/menu-image/banner-menu3.jpg" alt="" /></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-dropdown">
+              <a routerLink="customer/cart">Giỏ hàng <i class="ion-ios-arrow-down"></i></a>
+              <ul class="main-sub-menu">
+                <li><a routerLink="">Về chúng tôi</a></li>
+                <li><a routerLink="/customer/checkout">Thanh toán</a></li>
+                <li><a routerLink="">So sánh</a></li>
+                <li routerLink="/customer/login"><a>Đăng nhập & Đăng kí</a></li>
+                <li><a routerLink="">Tài khoản</a></li>
+                <li><a routerLink="">Ưu thích</a></li>
+              </ul>
+            </li>
+            <li class="menu-dropdown">
+              <a href="#">Bài viết<i class="ion-ios-arrow-down"></i></a>
+              <ul class="main-sub-menu">
+                <li class="menu-dropdown position-static">
+                  <a href="#">Blog Grid <i class="ion-ios-arrow-right"></i></a>
+                  <ul class="main-sub-menu main-sub-menu-2">
+                    <li><a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a></li>
+                    <li><a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- header horizontal menu -->
+        <div class="intro-text-shipping text-right">
+          <div class="free-ship">Miễn phí ship cho đơn hàng trên 500.000 vnđ</div>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</div>
